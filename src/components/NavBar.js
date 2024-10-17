@@ -107,8 +107,10 @@ function NavBar() {
           </li>
         </ul>
       </motion.nav>
-
-      <div id="socialMedia">
+      <div
+        id="socialMedia"
+        className={`socialMedia ${isOpen ? "is-open" : ""}`}
+      >
         <div className="card">
           <a
             className="socialContainer containerOne"

@@ -70,9 +70,29 @@ a:link {
 
 /* SOCIAL MEDIA */
 
-#socialMedia {
+.socialMedia {
   display: none;
+  transition: 5s all;
 }
+
+#socialMedia.is-open {
+  display: flex;
+  background-color: #fff;
+}
+
+.card a {
+  animation: 1s alternate fade;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .card {
   width: fit-content;
   height: fit-content;
@@ -257,7 +277,7 @@ a:link {
 
 @media (width <= 426px) {
   #header {
-    background: red;
+    background: #fff;
   }
 
   .header__menuItems {
@@ -310,7 +330,6 @@ a:link {
   }
 
   #socialMedia {
-    display: flex;
     background: #fff;
     border-radius: 20px;
     justify-content: center;
