@@ -9,10 +9,12 @@ function NavBar() {
   const toggleMenu = () => {
     setIsOpen((open) => !open);
   };
+
   return (
     <>
       <motion.nav
         id="header"
+        className={`header ${isOpen ? "is-open" : ""}`}
         initial={{ opacity: 0.8 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0.8 }}

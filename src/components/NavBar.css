@@ -1,4 +1,6 @@
 nav {
+  position: fixed;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,6 +18,7 @@ nav {
   font-size: 20px;
   letter-spacing: 0.1rem;
   margin: 0;
+  padding: 0;
   color: var(--black);
 }
 
@@ -66,6 +69,10 @@ a:link {
 
 #header > ul > li {
   list-style-type: none;
+}
+
+#header.is-open {
+  background-color: greenyellow;
 }
 
 /* SOCIAL MEDIA */
@@ -276,10 +283,6 @@ a:link {
 }
 
 @media (width <= 426px) {
-  #header {
-    background: #fff;
-  }
-
   .header__menuItems {
     display: none;
     text-align: center;
@@ -296,6 +299,7 @@ a:link {
     align-items: center;
     padding-bottom: 30px;
     margin-top: -10px;
+    background: #fff;
   }
 
   .header__menuItems-trigger {
