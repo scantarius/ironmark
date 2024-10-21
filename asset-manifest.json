@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/ironmark/static/css/main.2fac51ac.css",
-    "main.js": "/ironmark/static/js/main.2ea38b63.js",
+    "main.css": "/ironmark/static/css/main.591a4ac9.css",
+    "main.js": "/ironmark/static/js/main.45dd56f0.js",
     "static/js/453.a6bc6da8.chunk.js": "/ironmark/static/js/453.a6bc6da8.chunk.js",
     "static/media/aboutBackground.png": "/ironmark/static/media/aboutBackground.79b58753469094605d02.png",
     "static/media/order.jpg": "/ironmark/static/media/order.f72a659dd3113c891695.jpg",
     "index.html": "/ironmark/index.html",
-    "main.2fac51ac.css.map": "/ironmark/static/css/main.2fac51ac.css.map",
-    "main.2ea38b63.js.map": "/ironmark/static/js/main.2ea38b63.js.map",
+    "main.591a4ac9.css.map": "/ironmark/static/css/main.591a4ac9.css.map",
+    "main.45dd56f0.js.map": "/ironmark/static/js/main.45dd56f0.js.map",
     "453.a6bc6da8.chunk.js.map": "/ironmark/static/js/453.a6bc6da8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2fac51ac.css",
-    "static/js/main.2ea38b63.js"
+    "static/css/main.591a4ac9.css",
+    "static/js/main.45dd56f0.js"
   ]
 }
