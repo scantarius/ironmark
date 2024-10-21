@@ -1,5 +1,5 @@
 nav {
-  position: fixed;
+  position: relative;
   top: 0;
   display: flex;
   justify-content: center;
@@ -72,7 +72,11 @@ a:link {
 }
 
 #header.is-open {
-  background-color: greenyellow;
+  background-color: #fff;
+}
+
+#header.is-closed {
+  transition: all 2s;
 }
 
 /* SOCIAL MEDIA */
@@ -88,14 +92,18 @@ a:link {
 }
 
 .card a {
-  animation: 1s alternate fade;
+  width: 100%;
+  animation: 1.2s alternate ease-in-out fade;
 }
 
 @keyframes fade {
-  from {
+  0% {
     opacity: 0;
   }
-  to {
+  80% {
+    opacity: 0;
+  }
+  100% {
     opacity: 1;
   }
 }
@@ -105,13 +113,14 @@ a:link {
   height: fit-content;
   display: flex;
   padding: 25px 25px;
-  gap: 20px;
+  gap: 30px;
 }
 
 .socialContainer {
-  width: 32px;
-  height: 32px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
+  transform: scale(1.4);
   background-color: rgb(44, 44, 44);
   display: flex;
   align-items: center;
@@ -146,7 +155,10 @@ a:link {
 }
 
 .socialSvg {
-  width: 14px;
+  width: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .socialSvg path {
@@ -245,11 +257,27 @@ a:link {
 }
 
 .hamburgerIcon {
-  animation: fadeIn 1s both;
+  animation: fadeIn 2s both;
+}
+
+.closeIcon {
+  display: none;
+  visibility: hidden;
 }
 
 .closeIcon.is-open {
-  animation: fadeIn 1s both;
+  animation: goVisible 2s both;
+}
+
+@keyframes goVisible {
+  from {
+    visibility: hidden;
+    margin-top: -200px;
+  }
+  to {
+    visibility: visible;
+    margin-top: 0;
+  }
 }
 
 .hamburgerIcon:checked {
@@ -279,7 +307,30 @@ a:link {
 }
 
 .header__menuItems {
-  animation: fadeIn 1.5s both;
+  transition: all 2s;
+}
+
+.header__menuItems.is-open > li > a:nth-child(1) {
+  animation: 0.5s alternate ease-in-out dropdown;
+}
+
+.header__menuItems.is-open > li > a:nth-child(2) {
+  animation: 0.8s alternate ease-in-out dropdown;
+}
+
+.header__menuItems.is-open > li > a:nth-child(3) {
+  animation: 1s alternate ease-in-out dropdown;
+}
+
+@keyframes dropdown {
+  from {
+    margin-top: -100px;
+    opacity: 0;
+  }
+  to {
+    margin-top: 0;
+    opacity: 1;
+  }
 }
 
 @media (width <= 426px) {
