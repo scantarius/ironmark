@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/ironmark/static/css/main.3aa40a92.css",
-    "main.js": "/ironmark/static/js/main.c9c82d82.js",
+    "main.css": "/ironmark/static/css/main.ce575b59.css",
+    "main.js": "/ironmark/static/js/main.e21aee79.js",
     "static/js/453.a6bc6da8.chunk.js": "/ironmark/static/js/453.a6bc6da8.chunk.js",
     "static/media/aboutBackground.png": "/ironmark/static/media/aboutBackground.79b58753469094605d02.png",
+    "static/media/card.png": "/ironmark/static/media/card.05fb6ade89e583b46b99.png",
     "static/media/order.jpg": "/ironmark/static/media/order.f72a659dd3113c891695.jpg",
     "index.html": "/ironmark/index.html",
-    "main.3aa40a92.css.map": "/ironmark/static/css/main.3aa40a92.css.map",
-    "main.c9c82d82.js.map": "/ironmark/static/js/main.c9c82d82.js.map",
+    "main.ce575b59.css.map": "/ironmark/static/css/main.ce575b59.css.map",
+    "main.e21aee79.js.map": "/ironmark/static/js/main.e21aee79.js.map",
     "453.a6bc6da8.chunk.js.map": "/ironmark/static/js/453.a6bc6da8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3aa40a92.css",
-    "static/js/main.c9c82d82.js"
+    "static/css/main.ce575b59.css",
+    "static/js/main.e21aee79.js"
   ]
 }
