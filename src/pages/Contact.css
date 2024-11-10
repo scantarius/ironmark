@@ -6,20 +6,6 @@
   text-align: center;
 }
 
-#contactFormWrapper {
-  width: 85%;
-  min-height: 85vh;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 11px 11px 35px 0px #7e86a4a8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-/* */
-
 .brutalist-container,
 #submitForm {
   margin-top: 50px;
@@ -57,7 +43,6 @@
   border-radius: 0;
   outline: none;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  box-shadow: 3px 3px 0 var(--grey), 6px 6px 0 var(--black);
 }
 
 @keyframes glitch {
@@ -163,6 +148,7 @@
 
 #submitForm {
   position: relative;
+  transform: rotate(0);
 }
 
 .brutalist-input:focus + .brutalist-label {

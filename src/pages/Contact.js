@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import "./Contact.css";
 import "./Loader.css";
+import emailjs from "@emailjs/browser";
+import Footer from "../components/Footer";
 
 function Contact() {
   const [style, setStyle] = useState("loaderHidden");
@@ -23,6 +26,34 @@ function Contact() {
       setFormStyle("brutalist-containerHidden");
     else setFormStyle("brutalist-container");
   };
+
+  const material = localStorage.getItem("Material");
+  const thickness = localStorage.getItem("Thickness");
+  const amount = localStorage.getItem("Amount");
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_wuxvzpz",
+        "template_6pvzycl",
+        form.current,
+        "RH_RtvP5d5GB0v-ys"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  };
+
   return (
     <>
       <div id="contactForm">
@@ -33,33 +64,68 @@ function Contact() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, transition: { duration: 6 } }}
           >
-            <form>
+            <form ref={form} onSubmit={sendEmail}>
               <input
-                onKeyDown={handleEnter}
-                placeholder="Your Name"
-                class="brutalist-input smooth-type"
-                type="text"
+                value={material + ", " + thickness + ", " + amount}
+                className="brutalist-input smooth-type"
+                readonly="readonly"
+                name="request_data"
               />
-              <label class="brutalist-label">VASE IME</label>
-              <div class="brutalist-container">
+              <label className="brutalist-label">You choosed</label>
+              <div className="brutalist-container">
+                <input
+                  onKeyDown={handleEnter}
+                  placeholder="Your Name"
+                  className="brutalist-input smooth-type"
+                  type="text"
+                  name="user_name"
+                  minlength="3"
+                  maxlength="20"
+                  required
+                />
+                <label className="brutalist-label">Your Name</label>
+              </div>
+              <div className="brutalist-container">
                 <input
                   onKeyDown={handleEnter}
                   placeholder="Company Name"
-                  class="brutalist-input smooth-type"
+                  className="brutalist-input smooth-type"
                   type="text"
+                  name="company_name"
+                  minlength="3"
+                  maxlength="20"
+                  required
                 />
-                <label class="brutalist-label">NAZIV KOMPANIJE</label>
-                <div class="brutalist-container">
+                <label className="brutalist-label">Company Name</label>
+                <div className="brutalist-container">
                   <input
                     onKeyDown={handleEnter}
                     placeholder="Location"
-                    class="brutalist-input smooth-type"
+                    className="brutalist-input smooth-type"
                     type="text"
+                    name="location_input"
+                    minlength="3"
+                    maxlength="20"
+                    required
                   />
-                  <label class="brutalist-label">Lokacija</label>
-                  <button id="submitForm" onClick={changeStyle}>
-                    Posalji
-                  </button>
+                  <label className="brutalist-label">Location</label>
+                </div>
+                <div className="brutalist-container">
+                  <input
+                    onKeyDown={handleEnter}
+                    placeholder="Your Email"
+                    className="brutalist-input smooth-type"
+                    type="email"
+                    name="user_email"
+                    required
+                  />
+                  <label className="brutalist-label">Your Email</label>
+                  <input
+                    id="submitForm"
+                    onClick={changeStyle}
+                    type="submit"
+                    value="Send"
+                  />
                 </div>
               </div>
             </form>
@@ -71,10 +137,11 @@ function Contact() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, transition: { duration: 6 } }}
           >
-            <h1 className="loaderThanksText">Hvala Vam na povjerenju!</h1>
+            <h1 className="loaderThanksText">Thank you for your trust!</h1>
           </motion.div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

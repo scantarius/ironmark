@@ -11,6 +11,7 @@ nav {
   font-weight: 400;
   font-size: 20px;
   line-height: 24.38px;
+  z-index: 1;
 }
 
 .logoTitle::after {
@@ -128,21 +129,25 @@ a:link {
   overflow: hidden;
   transition-duration: 0.3s;
 }
+
 /* instagram */
 .containerOne:hover {
   background-color: #d62976;
   transition-duration: 0.3s;
 }
+
 /* twitter */
 .containerTwo:hover {
   background-color: #00acee;
   transition-duration: 0.3s;
 }
+
 /* linkdin */
 .containerThree:hover {
   background-color: #0072b1;
   transition-duration: 0.3s;
 }
+
 /* whatsapp */
 .containerFour:hover {
   background-color: #128c7e;

@@ -6,7 +6,6 @@ import { HashRouter as Router } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import LandingPage from "./pages/LandingPage";
 import About from "./pages/About";
-import Order from "./pages/Order";
 import Contact from "./pages/Contact";
 
 function App() {
@@ -17,7 +16,6 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/about" element={<About />} />
-          <Route path="/order" element={<Order />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Router>

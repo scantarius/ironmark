@@ -3,7 +3,6 @@
   margin-top: -100px;
   position: relative;
   width: 100%;
-  z-index: -1;
 }
 
 .aboutBackground {
@@ -38,6 +37,16 @@
   border: none;
   color: #fff;
   margin-top: 40px;
+}
+
+.moreAboutButton {
+  position: relative;
+  z-index: 11;
+  cursor: pointer;
+  color: #fff;
+  padding: 18px;
+  width: 100%;
+  height: auto;
 }
 
 /* DYNAMIC TEXT */
@@ -97,6 +106,10 @@
   background: lightblue;
 }
 
+#productCard > div:nth-child(1) > button:hover {
+  cursor: pointer;
+}
+
 #productCard > div:nth-child(1) > button:nth-child(1) {
   background: linear-gradient(
     45deg,
@@ -152,28 +165,106 @@
   0% {
     left: -100px;
   }
-
   60% {
     left: 100%;
   }
-
   to {
     left: 100%;
   }
 }
 
+#productCard > div:nth-child(2) {
+  transition: all 3s;
+}
+
 #productCard > div:nth-child(2) > img {
+  border-radius: 20px;
   width: 80%;
   height: 450px;
   object-fit: cover;
+  animation-delay: 2s;
 }
 
-#productCard > div:nth-child(2) > h1 {
-  position: absolute;
-  bottom: 0;
-  right: 5%;
-  width: 20%;
-  color: #fff;
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* otherCardOptions */
+
+#productCard > div:nth-child(3) {
+  gap: 0;
+}
+
+.otherCardOptions__one {
+  border-radius: 0 0 0 20px;
+}
+
+.otherCardOptions__two {
+  border-radius: 0 0 20px 0;
+}
+
+.otherCardOptions__one,
+.otherCardOptions__two {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  width: 36%;
+  padding: 15px;
+  background: #eee;
+}
+
+/* radio inputs */
+
+.radio-inputs,
+.radio-inputs2 {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-radius: 0.5rem;
+  background-color: #eee;
+  box-sizing: border-box;
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.4);
+  padding: 0.25rem;
+  width: 300px;
+  font-size: 14px;
+}
+
+.radio-inputs .radio,
+.radio-inputs2 .radio2 {
+  width: 40px;
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.radio-inputs .radio input,
+.radio-inputs2 .radio2 input {
+  display: none;
+}
+
+.radio-inputs .radio .name,
+.radio-inputs2 .radio2 .name2 {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.5rem 0;
+  color: rgba(51, 65, 85, 1);
+  transition: all 0.15s ease-in-out;
+}
+
+.radio-inputs .radio input:checked + .name,
+.radio-inputs2 .radio2 input:checked + .name2 {
+  background-color: #fff;
+  font-weight: 600;
 }
 
 /* productInfo */
@@ -182,6 +273,33 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 100px;
+  color: #fff;
+}
+
+#productInfo span {
+  color: gray;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+#productInfo h1 {
+  font-weight: 400;
+}
+
+#productInfo > div {
+  padding: 20px 120px;
+  background: radial-gradient(
+    circle at -8.9% 55.2%,
+    rgb(255, 124, 0) 0%,
+    rgb(255, 124, 0) 15.9%,
+    rgb(255, 163, 77) 15.9%,
+    rgb(255, 163, 77) 24.4%,
+    rgb(19, 30, 37) 24.5%,
+    rgb(19, 30, 37) 66%
+  );
+  border-radius: 20px;
 }
 
 /* processButton */

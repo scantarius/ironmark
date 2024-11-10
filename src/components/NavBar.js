@@ -86,17 +86,6 @@ function NavBar() {
                 </motion.span>
               </NavLink>
 
-              <NavLink to="/order">
-                <motion.span
-                  initial={{ y: "-100%", opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: "-100%", opacity: 0 }}
-                  transition={{ duration: 0.5, delay: 0.6 }}
-                >
-                  Order Sample
-                </motion.span>
-              </NavLink>
-
               <NavLink to="/contact">
                 <motion.span
                   initial={{ y: "-100%", opacity: 0 }}
