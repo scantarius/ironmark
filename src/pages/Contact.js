@@ -20,6 +20,10 @@ function Contact() {
   }
 
   const changeStyle = () => {
+    document.getElementById("loaderWrapper").style.height = "100vh";
+    document.getElementById("loaderWrapper").style.display = "flex";
+    document.getElementById("loaderWrapper").style.alignItems = "center";
+    window.scrollTo({ top: 0, left: 0 });
     if (style !== "loaderHidden") setStyle("loaderHidden");
     else setStyle("loaderVisible");
     if (formStyle !== "brutalist-containerHidden")
@@ -131,14 +135,16 @@ function Contact() {
             </form>
           </motion.div>
 
-          <motion.div
-            className={style}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0, transition: { duration: 6 } }}
-          >
-            <h1 className="loaderThanksText">Thank you for your trust!</h1>
-          </motion.div>
+          <div id="loaderWrapper">
+            <motion.div
+              className={style}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0, transition: { duration: 6 } }}
+            >
+              <h1 className="loaderThanksText">Thank you for your trust!</h1>
+            </motion.div>
+          </div>
         </div>
       </div>
       <Footer />

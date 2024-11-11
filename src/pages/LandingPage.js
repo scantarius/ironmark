@@ -90,13 +90,17 @@ function LandingPage() {
   const amountVal = localStorage.getItem("Amount");
 
   const ProductCardView = (productCard) => {
-    const productCardID = document.getElementById(productCard);
+    const productCardID = document.getElementById("productCard");
     productCardID.scrollIntoView({
       behavior: "smooth",
-      block: "end",
+      block: "start",
       inline: "nearest",
     });
   };
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, left: 0 });
+  }
 
   return (
     <>
@@ -230,7 +234,7 @@ function LandingPage() {
       </div>
       <div id="processButtonWrapper">
         <button id="processButton">
-          <NavLink to="/contact" className="btn">
+          <NavLink to="/contact" onClick={scrollToTop} className="btn">
             <span className="spn">REQUEST</span>
           </NavLink>
         </button>
