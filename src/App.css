@@ -7,6 +7,10 @@
   --lightgreen: #61bc84;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: #fff;
 }

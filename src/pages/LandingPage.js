@@ -18,9 +18,9 @@ function LandingPage() {
   const [eight, setEight] = useState(false);
 
   const [amount, setAmount] = useState(false);
+  const [twentyfive, setTwentyFive] = useState(false);
   const [fifty, setFifty] = useState(false);
   const [hundred, setHundred] = useState(false);
-  const [more, setMore] = useState(false);
 
   function changeMaterialToGold() {
     setMaterialPhoto(false);
@@ -58,6 +58,15 @@ function LandingPage() {
     document.getElementById("thicknessValue").innerHTML = x;
   }
 
+  function changeAmountToTwentyFive() {
+    setAmount(true);
+    setTwentyFive(true);
+    console.log(twentyfive);
+    localStorage.setItem("Amount", "25");
+    var x = localStorage.getItem("Amount");
+    document.getElementById("amountValue").innerHTML = x;
+  }
+
   function changeAmountToFifty() {
     setAmount(false);
     setFifty(true);
@@ -76,18 +85,18 @@ function LandingPage() {
     document.getElementById("amountValue").innerHTML = x;
   }
 
-  function changeAmountToMore() {
-    setAmount(true);
-    setMore(true);
-    console.log(more);
-    localStorage.setItem("Amount", "More");
-    var x = localStorage.getItem("Amount");
-    document.getElementById("amountValue").innerHTML = x;
-  }
-
   const materialVal = localStorage.getItem("Material");
   const thicknessVal = localStorage.getItem("Thickness");
   const amountVal = localStorage.getItem("Amount");
+
+  const ProductCardView = (productCard) => {
+    const productCardID = document.getElementById(productCard);
+    productCardID.scrollIntoView({
+      behavior: "smooth",
+      block: "end",
+      inline: "nearest",
+    });
+  };
 
   return (
     <>
@@ -99,14 +108,14 @@ function LandingPage() {
             alt={aboutBackground}
           />
           <div className="textBox">
-            <h1 className="title">We make you</h1>
+            <h1 className="title">we make you</h1>
             <div className="animation">
               <h1 className="item">stand out</h1>
               <h1 className="item">look professional</h1>
               <h1 className="item">leave lasting impression</h1>
             </div>
             <button>
-              <NavLink to="#productCard" className="moreAboutButton">
+              <NavLink onClick={ProductCardView} className="moreAboutButton">
                 CREATE ORDER
               </NavLink>
             </button>
@@ -167,6 +176,15 @@ function LandingPage() {
                   name="radio2"
                   defaultChecked=""
                   className={amount}
+                  onClick={changeAmountToTwentyFive}
+                />
+                <span className="name2">25</span>
+              </label>
+              <label className="radio2">
+                <input
+                  type="radio"
+                  name="radio2"
+                  className={amount}
                   onClick={changeAmountToFifty}
                 />
                 <span className="name2">50</span>
@@ -180,19 +198,18 @@ function LandingPage() {
                 />
                 <span className="name2">100</span>
               </label>
-              <label className="radio2">
-                <input
-                  type="radio"
-                  name="radio2"
-                  className={amount}
-                  onClick={changeAmountToMore}
-                />
-                <span className="name2">More</span>
-              </label>
             </div>
           </div>
         </div>
       </div>
+      <section id="additionalInfo">
+        <div id="additionalInfoWrapper">
+          <h1>
+            If you are interested in more than 100 cards contact us directly at{" "}
+            <span>sales@ironmarkdesigns.com</span>
+          </h1>
+        </div>
+      </section>
       <div id="productInfo">
         <div>
           <span>Material</span>

@@ -281,7 +281,7 @@ a:link {
   }
   to {
     visibility: visible;
-    margin-top: 0;
+    margin-top: -70px;
   }
 }
 
@@ -345,6 +345,9 @@ a:link {
   }
 
   .header__logo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     text-align: center;
     padding: 0;
   }
@@ -363,7 +366,7 @@ a:link {
     color: #000;
     position: absolute;
     left: 5%;
-    margin-bottom: -20px;
+    top: 40%;
   }
 
   #header a {
@@ -381,7 +384,6 @@ a:link {
 
   .closeIcon.is-open {
     display: block;
-    margin-bottom: 150px;
     transform: scale(0.8);
   }
 
@@ -397,5 +399,10 @@ a:link {
     padding: 0;
     margin-top: -30px;
     transform: scale(0.7);
+  }
+
+  .socialContainer {
+    width: 25px;
+    height: 30px;
   }
 }

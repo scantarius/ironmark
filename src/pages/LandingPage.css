@@ -59,6 +59,7 @@
   text-align: center;
   overflow: hidden;
   height: 50px;
+  width: 100%;
 }
 
 .animation > h1 {
@@ -87,7 +88,7 @@
 /* productCard */
 
 #productCard {
-  margin: 30px 0 30px 0;
+  margin: 30px 0 0 0;
   background: #fff;
 }
 
@@ -96,6 +97,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 2%;
 }
 
@@ -206,14 +208,16 @@
 
 .otherCardOptions__two {
   border-radius: 0 0 20px 0;
+  display: block;
 }
 
 .otherCardOptions__one,
 .otherCardOptions__two {
   display: flex;
   justify-content: center;
-  gap: 10px;
   align-items: center;
+  flex-direction: column;
+  gap: 10px;
   width: 36%;
   padding: 15px;
   background: #eee;
@@ -267,6 +271,24 @@
   font-weight: 600;
 }
 
+/* additionalInfo */
+
+#additionalInfoWrapper {
+  width: 100%;
+}
+
+#additionalInfo h1 {
+  text-align: center;
+  padding: 10px 0 10px 0;
+  background-color: #eee;
+  color: #000;
+  font-family: "Poppins", sans-serif;
+}
+
+#additionalInfo span {
+  color: blue;
+}
+
 /* productInfo */
 
 #productInfo {
@@ -278,6 +300,11 @@
   color: #fff;
 }
 
+#productInfo > div {
+  display: block;
+  width: 15%;
+}
+
 #productInfo span {
   color: gray;
   text-transform: uppercase;
@@ -286,6 +313,8 @@
 
 #productInfo h1 {
   font-weight: 400;
+  font-size: 24px;
+  width: 100%;
 }
 
 #productInfo > div {
@@ -377,4 +406,62 @@ button {
   text-decoration: none;
   border: none;
   background-color: transparent;
+}
+
+/* Resposivity */
+
+@media (width <= 768px) {
+  #productInfo {
+    gap: 60px;
+  }
+
+  #productInfo > div {
+    display: block;
+    width: 20%;
+  }
+
+  #additionalInfo h1 {
+    font-size: 20px;
+    margin-top: 0;
+    padding: 20px;
+  }
+
+  .otherCardOptions__one,
+  .otherCardOptions__two {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding: 15px;
+    background: #eee;
+  }
+}
+
+@media (width <= 426px) {
+  #productInfo {
+    gap: 10px;
+  }
+
+  #productInfo > div {
+    display: block;
+    width: 25%;
+  }
+
+  #additionalInfo h1 {
+    font-size: 16px;
+    padding: 15px;
+    margin: 0 0 10px;
+  }
+
+  #productInfo span {
+    display: block;
+    font-size: 12px;
+  }
+
+  #productInfo h1 {
+    display: block;
+    font-size: 18px;
+  }
 }

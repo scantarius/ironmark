@@ -1,5 +1,6 @@
 import React from "react";
 import "./Footer.css";
+import { NavLink } from "react-router-dom";
 
 function Footer() {
   return (
@@ -7,6 +8,9 @@ function Footer() {
       <footer>
         <div>
           <h1>iRONMARK. | All rights reserved.</h1>
+          <h1>
+            ® <span>2024</span>
+          </h1>
         </div>
         <div id="footerSocialMedia">
           <div className="footerCard">
@@ -57,7 +61,14 @@ function Footer() {
         </div>
       </footer>
       <div id="createdBy">
-        Created by: <span>scantarius</span>
+        Website designed & developed by{" "}
+        <NavLink
+          to="https://github.com/scantarius"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          scantarius
+        </NavLink>
       </div>
     </>
   );
