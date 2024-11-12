@@ -304,6 +304,7 @@
 #productInfo > div {
   display: block;
   width: 15%;
+  height: 280px;
 }
 
 #productInfo span {
@@ -316,6 +317,17 @@
   font-weight: 400;
   font-size: 24px;
   width: 100%;
+}
+
+#productInfo h3 {
+  font-weight: 400;
+  margin: 10px 0;
+  color: red;
+  text-decoration: line-through;
+}
+
+#totalPriceAmount {
+  margin-top: 5px;
 }
 
 #productInfo > div {
@@ -419,6 +431,7 @@ button {
   #productInfo > div {
     display: block;
     width: 20%;
+    height: auto;
   }
 
   #additionalInfo h1 {

@@ -32,47 +32,264 @@ function LandingPage() {
   const [thicknessPriceSilverEight, setThicknessPriceSilverEight] =
     useState(false);
 
+  const [amountTwentyFive, setAmountTwentyFive] = useState(false);
+  const [amountFifty, setAmountFifty] = useState(false);
+  const [amountHundred, setAmountHundred] = useState(false);
+
   function setPriceAmount() {
     if (
+      // gold 0.5mm 25
       localStorage.getItem("Material") === "Gold" &&
-      localStorage.getItem("Thickness") === "0.5mm"
+      localStorage.getItem("Thickness") === "0.5mm" &&
+      localStorage.getItem("Amount") === "25"
     ) {
       setGoldPrice(true);
       setThicknessPriceGoldFive(true);
-      console.log(goldPrice, thicknessPriceGoldFive);
+      setAmountTwentyFive(true);
+      console.log(goldPrice, thicknessPriceGoldFive, amountTwentyFive);
       localStorage.setItem("Price", "€ 4.95");
-      var x = localStorage.getItem("Price");
-      document.getElementById("priceAmount").innerHTML = x;
+      localStorage.setItem("oldTotalPriceAmount", "€ 123.75");
+      localStorage.setItem("totalPriceAmount", "€ 117.56");
+
+      document.getElementById("priceAmount").innerHTML =
+        localStorage.getItem("Price");
+      document.getElementById("oldTotalPriceAmount").innerHTML =
+        localStorage.getItem("oldTotalPriceAmount");
+      document.getElementById("totalPriceAmount").innerHTML =
+        localStorage.getItem("totalPriceAmount");
+      document.getElementById("discountAmount").innerHTML = "SALE 5% OFF";
     } else if (
+      // gold 0.5mm 50
       localStorage.getItem("Material") === "Gold" &&
-      localStorage.getItem("Thickness") === "0.8mm"
+      localStorage.getItem("Thickness") === "0.5mm" &&
+      localStorage.getItem("Amount") === "50"
+    ) {
+      setGoldPrice(true);
+      setThicknessPriceGoldFive(true);
+      setAmountFifty(true);
+      console.log(goldPrice, thicknessPriceGoldFive, amountFifty);
+      localStorage.setItem("Price", "€ 4.95");
+      localStorage.setItem("oldTotalPriceAmount", "€ 247.50");
+      localStorage.setItem("totalPriceAmount", "€ 222.75");
+
+      document.getElementById("priceAmount").innerHTML =
+        localStorage.getItem("Price");
+      document.getElementById("oldTotalPriceAmount").innerHTML =
+        localStorage.getItem("oldTotalPriceAmount");
+      document.getElementById("totalPriceAmount").innerHTML =
+        localStorage.getItem("totalPriceAmount");
+      document.getElementById("discountAmount").innerHTML = "SALE 10% OFF";
+    } else if (
+      // gold 0.5mm 100
+      localStorage.getItem("Material") === "Gold" &&
+      localStorage.getItem("Thickness") === "0.5mm" &&
+      localStorage.getItem("Amount") === "100"
+    ) {
+      setGoldPrice(true);
+      setThicknessPriceGoldFive(true);
+      setAmountHundred(true);
+      console.log(goldPrice, thicknessPriceGoldFive, amountHundred);
+      localStorage.setItem("Price", "€ 4.95");
+      localStorage.setItem("oldTotalPriceAmount", "€ 495.00");
+      localStorage.setItem("totalPriceAmount", "€ 420.75");
+
+      document.getElementById("priceAmount").innerHTML =
+        localStorage.getItem("Price");
+      document.getElementById("oldTotalPriceAmount").innerHTML =
+        localStorage.getItem("oldTotalPriceAmount");
+      document.getElementById("totalPriceAmount").innerHTML =
+        localStorage.getItem("totalPriceAmount");
+      document.getElementById("discountAmount").innerHTML = "SALE 15% OFF";
+    } else if (
+      // gold 0.8mm 25
+      localStorage.getItem("Material") === "Gold" &&
+      localStorage.getItem("Thickness") === "0.8mm" &&
+      localStorage.getItem("Amount") === "25"
     ) {
       setGoldPrice(true);
       setThicknessPriceGoldEight(true);
-      console.log(goldPrice, thicknessPriceGoldEight);
+      setAmountTwentyFive(true);
+      console.log(goldPrice, thicknessPriceGoldEight, amountTwentyFive);
       localStorage.setItem("Price", "€ 5.25");
-      var g = localStorage.getItem("Price");
-      document.getElementById("priceAmount").innerHTML = g;
+      localStorage.setItem("oldTotalPriceAmount", "€ 131.25");
+      localStorage.setItem("totalPriceAmount", "€ 124.68");
+
+      document.getElementById("priceAmount").innerHTML =
+        localStorage.getItem("Price");
+      document.getElementById("oldTotalPriceAmount").innerHTML =
+        localStorage.getItem("oldTotalPriceAmount");
+      document.getElementById("totalPriceAmount").innerHTML =
+        localStorage.getItem("totalPriceAmount");
+      document.getElementById("discountAmount").innerHTML = "SALE 5% OFF";
     } else if (
+      // gold 0.8mm 50
+      localStorage.getItem("Material") === "Gold" &&
+      localStorage.getItem("Thickness") === "0.8mm" &&
+      localStorage.getItem("Amount") === "50"
+    ) {
+      setGoldPrice(true);
+      setThicknessPriceGoldEight(true);
+      setAmountFifty(true);
+      console.log(goldPrice, thicknessPriceGoldEight, amountFifty);
+      localStorage.setItem("Price", "€ 5.25");
+      localStorage.setItem("oldTotalPriceAmount", "€ 262.50");
+      localStorage.setItem("totalPriceAmount", "€ 236.25");
+
+      document.getElementById("priceAmount").innerHTML =
+        localStorage.getItem("Price");
+      document.getElementById("oldTotalPriceAmount").innerHTML =
+        localStorage.getItem("oldTotalPriceAmount");
+      document.getElementById("totalPriceAmount").innerHTML =
+        localStorage.getItem("totalPriceAmount");
+      document.getElementById("discountAmount").innerHTML = "SALE 10% OFF";
+    } else if (
+      // gold 0.8mm 100
+      localStorage.getItem("Material") === "Gold" &&
+      localStorage.getItem("Thickness") === "0.8mm" &&
+      localStorage.getItem("Amount") === "100"
+    ) {
+      setGoldPrice(true);
+      setThicknessPriceGoldEight(true);
+      setAmountHundred(true);
+      console.log(goldPrice, thicknessPriceGoldEight, amountHundred);
+      localStorage.setItem("Price", "€ 5.25");
+      localStorage.setItem("oldTotalPriceAmount", "€ 525.00");
+      localStorage.setItem("totalPriceAmount", "€ 446.25");
+
+      document.getElementById("priceAmount").innerHTML =
+        localStorage.getItem("Price");
+      document.getElementById("oldTotalPriceAmount").innerHTML =
+        localStorage.getItem("oldTotalPriceAmount");
+      document.getElementById("totalPriceAmount").innerHTML =
+        localStorage.getItem("totalPriceAmount");
+      document.getElementById("discountAmount").innerHTML = "SALE 15% OFF";
+    }
+    if (
+      // silver 0.5mm 25
       localStorage.getItem("Material") === "Silver" &&
-      localStorage.getItem("Thickness") === "0.5mm"
+      localStorage.getItem("Thickness") === "0.5mm" &&
+      localStorage.getItem("Amount") === "25"
     ) {
       setSilverPrice(true);
       setThicknessPriceSilverFive(true);
-      console.log(silverPrice, thicknessPriceSilverFive);
+      setAmountTwentyFive(true);
+      console.log(silverPrice, thicknessPriceSilverFive, amountTwentyFive);
       localStorage.setItem("Price", "€ 4.88");
-      var d = localStorage.getItem("Price");
-      document.getElementById("priceAmount").innerHTML = d;
+      localStorage.setItem("oldTotalPriceAmount", "€ 122.00");
+      localStorage.setItem("totalPriceAmount", "€ 115.90");
+
+      document.getElementById("priceAmount").innerHTML =
+        localStorage.getItem("Price");
+      document.getElementById("oldTotalPriceAmount").innerHTML =
+        localStorage.getItem("oldTotalPriceAmount");
+      document.getElementById("totalPriceAmount").innerHTML =
+        localStorage.getItem("totalPriceAmount");
+      document.getElementById("discountAmount").innerHTML = "SALE 5% OFF";
     } else if (
+      // silver 0.5mm 50
       localStorage.getItem("Material") === "Silver" &&
-      localStorage.getItem("Thickness") === "0.8mm"
+      localStorage.getItem("Thickness") === "0.5mm" &&
+      localStorage.getItem("Amount") === "50"
+    ) {
+      setSilverPrice(true);
+      setThicknessPriceSilverFive(true);
+      setAmountFifty(true);
+      console.log(silverPrice, thicknessPriceSilverFive, amountFifty);
+      localStorage.setItem("Price", "€ 4.88");
+      localStorage.setItem("oldTotalPriceAmount", "€ 244.00");
+      localStorage.setItem("totalPriceAmount", "€ 219.60");
+
+      document.getElementById("priceAmount").innerHTML =
+        localStorage.getItem("Price");
+      document.getElementById("oldTotalPriceAmount").innerHTML =
+        localStorage.getItem("oldTotalPriceAmount");
+      document.getElementById("totalPriceAmount").innerHTML =
+        localStorage.getItem("totalPriceAmount");
+      document.getElementById("discountAmount").innerHTML = "SALE 10% OFF";
+    } else if (
+      // silver 0.5mm 100
+      localStorage.getItem("Material") === "Silver" &&
+      localStorage.getItem("Thickness") === "0.5mm" &&
+      localStorage.getItem("Amount") === "100"
+    ) {
+      setSilverPrice(true);
+      setThicknessPriceSilverFive(true);
+      setAmountHundred(true);
+      console.log(silverPrice, thicknessPriceSilverFive, amountHundred);
+      localStorage.setItem("Price", "€ 4.88");
+      localStorage.setItem("oldTotalPriceAmount", "€ 488.00");
+      localStorage.setItem("totalPriceAmount", "€ 414.80");
+
+      document.getElementById("priceAmount").innerHTML =
+        localStorage.getItem("Price");
+      document.getElementById("oldTotalPriceAmount").innerHTML =
+        localStorage.getItem("oldTotalPriceAmount");
+      document.getElementById("totalPriceAmount").innerHTML =
+        localStorage.getItem("totalPriceAmount");
+      document.getElementById("discountAmount").innerHTML = "SALE 15% OFF";
+    } else if (
+      // silver 0.8mm 25
+      localStorage.getItem("Material") === "Silver" &&
+      localStorage.getItem("Thickness") === "0.8mm" &&
+      localStorage.getItem("Amount") === "25"
     ) {
       setSilverPrice(true);
       setThicknessPriceSilverEight(true);
-      console.log(silverPrice, thicknessPriceSilverEight);
+      setAmountTwentyFive(true);
+      console.log(silverPrice, thicknessPriceSilverEight, amountTwentyFive);
       localStorage.setItem("Price", "€ 5.08");
-      var e = localStorage.getItem("Price");
-      document.getElementById("priceAmount").innerHTML = e;
+      localStorage.setItem("oldTotalPriceAmount", "€ 127.00");
+      localStorage.setItem("totalPriceAmount", "€ 120.65");
+
+      document.getElementById("priceAmount").innerHTML =
+        localStorage.getItem("Price");
+      document.getElementById("oldTotalPriceAmount").innerHTML =
+        localStorage.getItem("oldTotalPriceAmount");
+      document.getElementById("totalPriceAmount").innerHTML =
+        localStorage.getItem("totalPriceAmount");
+      document.getElementById("discountAmount").innerHTML = "SALE 5% OFF";
+    } else if (
+      // silver 0.8mm 50
+      localStorage.getItem("Material") === "Silver" &&
+      localStorage.getItem("Thickness") === "0.8mm" &&
+      localStorage.getItem("Amount") === "50"
+    ) {
+      setSilverPrice(true);
+      setThicknessPriceSilverEight(true);
+      setAmountFifty(true);
+      console.log(silverPrice, thicknessPriceSilverEight, amountFifty);
+      localStorage.setItem("Price", "€ 5.08");
+      localStorage.setItem("oldTotalPriceAmount", "€ 254.00");
+      localStorage.setItem("totalPriceAmount", "€ 228.60");
+
+      document.getElementById("priceAmount").innerHTML =
+        localStorage.getItem("Price");
+      document.getElementById("oldTotalPriceAmount").innerHTML =
+        localStorage.getItem("oldTotalPriceAmount");
+      document.getElementById("totalPriceAmount").innerHTML =
+        localStorage.getItem("totalPriceAmount");
+      document.getElementById("discountAmount").innerHTML = "SALE 10% OFF";
+    } else if (
+      // silver 0.8mm 100
+      localStorage.getItem("Material") === "Silver" &&
+      localStorage.getItem("Thickness") === "0.8mm" &&
+      localStorage.getItem("Amount") === "100"
+    ) {
+      setSilverPrice(true);
+      setThicknessPriceSilverEight(true);
+      setAmountHundred(true);
+      console.log(silverPrice, thicknessPriceSilverEight, amountHundred);
+      localStorage.setItem("Price", "€ 5.08");
+      localStorage.setItem("oldTotalPriceAmount", "€ 508.00");
+      localStorage.setItem("totalPriceAmount", "€ 431.80");
+
+      document.getElementById("priceAmount").innerHTML =
+        localStorage.getItem("Price");
+      document.getElementById("oldTotalPriceAmount").innerHTML =
+        localStorage.getItem("oldTotalPriceAmount");
+      document.getElementById("totalPriceAmount").innerHTML =
+        localStorage.getItem("totalPriceAmount");
+      document.getElementById("discountAmount").innerHTML = "SALE 15% OFF";
     }
   }
 
@@ -123,6 +340,7 @@ function LandingPage() {
     localStorage.setItem("Amount", "25");
     var x = localStorage.getItem("Amount");
     document.getElementById("amountValue").innerHTML = x;
+    setPriceAmount();
   }
 
   function changeAmountToFifty() {
@@ -132,6 +350,7 @@ function LandingPage() {
     localStorage.setItem("Amount", "50");
     var x = localStorage.getItem("Amount");
     document.getElementById("amountValue").innerHTML = x;
+    setPriceAmount();
   }
 
   function changeAmountToHundred() {
@@ -141,12 +360,16 @@ function LandingPage() {
     localStorage.setItem("Amount", "100");
     var x = localStorage.getItem("Amount");
     document.getElementById("amountValue").innerHTML = x;
+    setPriceAmount();
   }
 
   const materialVal = localStorage.getItem("Material");
   const thicknessVal = localStorage.getItem("Thickness");
   const amountVal = localStorage.getItem("Amount");
   const priceAmount = localStorage.getItem("Price");
+  const oldTotalPriceAmount = localStorage.getItem("oldTotalPriceAmount");
+  const totalPriceAmount = localStorage.getItem("totalPriceAmount");
+  const discountAmount = localStorage.getItem("discountAmount");
 
   const ProductCardView = (productCard) => {
     const productCardID = document.getElementById("productCard");
@@ -292,9 +515,10 @@ function LandingPage() {
           <span>Price</span>
           <h1 id="priceAmount">{priceAmount}</h1>
           <span>Discount</span>
-          <h1 id="thicknessValue">Sale 15% off</h1>
+          <h1 id="discountAmount">{discountAmount}</h1>
           <span>Total price</span>
-          <h1 id="amountValue">€ 0.00</h1>
+          <h3 id="oldTotalPriceAmount">{oldTotalPriceAmount}</h3>
+          <h1 id="totalPriceAmount">{totalPriceAmount}</h1>
         </div>
       </div>
       <div id="processButtonWrapper">
