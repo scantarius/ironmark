@@ -70,11 +70,11 @@
 .item {
   position: relative;
   top: -15px;
-  animation: move 5s infinite 1s;
+  animation: move 6s infinite 1s;
 }
 
 @keyframes move {
-  20% {
+  10% {
     top: -15px;
   }
   40% {
@@ -144,7 +144,7 @@
 }
 
 .activeColor:before {
-  animation: shine 1.5s ease-out infinite;
+  animation: shine 3s ease-out infinite;
 }
 
 .activeColor::before {
@@ -280,6 +280,7 @@
 #additionalInfo h1 {
   text-align: center;
   padding: 10px 0 10px 0;
+  margin: 0 0 20px 0;
   background-color: #eee;
   color: #000;
   font-family: "Poppins", sans-serif;

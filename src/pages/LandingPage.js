@@ -22,6 +22,60 @@ function LandingPage() {
   const [fifty, setFifty] = useState(false);
   const [hundred, setHundred] = useState(false);
 
+  const [goldPrice, setGoldPrice] = useState(false);
+  const [silverPrice, setSilverPrice] = useState(false);
+
+  const [thicknessPriceGoldFive, setThicknessPriceGoldFive] = useState(false);
+  const [thicknessPriceGoldEight, setThicknessPriceGoldEight] = useState(false);
+  const [thicknessPriceSilverFive, setThicknessPriceSilverFive] =
+    useState(false);
+  const [thicknessPriceSilverEight, setThicknessPriceSilverEight] =
+    useState(false);
+
+  function setPriceAmount() {
+    if (
+      localStorage.getItem("Material") === "Gold" &&
+      localStorage.getItem("Thickness") === "0.5mm"
+    ) {
+      setGoldPrice(true);
+      setThicknessPriceGoldFive(true);
+      console.log(goldPrice, thicknessPriceGoldFive);
+      localStorage.setItem("Price", "€ 4.95");
+      var x = localStorage.getItem("Price");
+      document.getElementById("priceAmount").innerHTML = x;
+    } else if (
+      localStorage.getItem("Material") === "Gold" &&
+      localStorage.getItem("Thickness") === "0.8mm"
+    ) {
+      setGoldPrice(true);
+      setThicknessPriceGoldEight(true);
+      console.log(goldPrice, thicknessPriceGoldEight);
+      localStorage.setItem("Price", "€ 5.25");
+      var g = localStorage.getItem("Price");
+      document.getElementById("priceAmount").innerHTML = g;
+    } else if (
+      localStorage.getItem("Material") === "Silver" &&
+      localStorage.getItem("Thickness") === "0.5mm"
+    ) {
+      setSilverPrice(true);
+      setThicknessPriceSilverFive(true);
+      console.log(silverPrice, thicknessPriceSilverFive);
+      localStorage.setItem("Price", "€ 4.88");
+      var d = localStorage.getItem("Price");
+      document.getElementById("priceAmount").innerHTML = d;
+    } else if (
+      localStorage.getItem("Material") === "Silver" &&
+      localStorage.getItem("Thickness") === "0.8mm"
+    ) {
+      setSilverPrice(true);
+      setThicknessPriceSilverEight(true);
+      console.log(silverPrice, thicknessPriceSilverEight);
+      localStorage.setItem("Price", "€ 5.08");
+      var e = localStorage.getItem("Price");
+      document.getElementById("priceAmount").innerHTML = e;
+    }
+  }
+
   function changeMaterialToGold() {
     setMaterialPhoto(false);
     setGold(true);
@@ -29,6 +83,7 @@ function LandingPage() {
     localStorage.setItem("Material", "Gold");
     var x = localStorage.getItem("Material");
     document.getElementById("cardColor").innerHTML = x;
+    setPriceAmount();
   }
 
   function changeMaterialToSilver() {
@@ -38,6 +93,7 @@ function LandingPage() {
     localStorage.setItem("Material", "Silver");
     var x = localStorage.getItem("Material");
     document.getElementById("cardColor").innerHTML = x;
+    setPriceAmount();
   }
 
   function changeThicknessToFive() {
@@ -47,15 +103,17 @@ function LandingPage() {
     localStorage.setItem("Thickness", "0.5mm");
     var x = localStorage.getItem("Thickness");
     document.getElementById("thicknessValue").innerHTML = x;
+    setPriceAmount();
   }
 
   function changeThicknessToEight() {
     setThickness(true);
-    setEight(eight);
+    setEight(true);
     console.log(eight);
     localStorage.setItem("Thickness", "0.8mm");
     var x = localStorage.getItem("Thickness");
     document.getElementById("thicknessValue").innerHTML = x;
+    setPriceAmount();
   }
 
   function changeAmountToTwentyFive() {
@@ -88,6 +146,7 @@ function LandingPage() {
   const materialVal = localStorage.getItem("Material");
   const thicknessVal = localStorage.getItem("Thickness");
   const amountVal = localStorage.getItem("Amount");
+  const priceAmount = localStorage.getItem("Price");
 
   const ProductCardView = (productCard) => {
     const productCardID = document.getElementById("productCard");
@@ -102,9 +161,15 @@ function LandingPage() {
     window.scrollTo({ top: 0, left: 0 });
   }
 
+  function loadDefaultItems() {
+    changeMaterialToGold();
+    changeThicknessToFive();
+    changeAmountToTwentyFive();
+  }
+
   return (
     <>
-      <div id="landingPage">
+      <section id="landingPage" onLoad={loadDefaultItems}>
         <div id="landingPageWrapper">
           <img
             className="aboutBackground"
@@ -125,9 +190,9 @@ function LandingPage() {
             </button>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div id="productCard">
+      <section id="productCard">
         <div>
           <button className="activeColor" onClick={changeMaterialToGold}>
             GOLD
@@ -205,7 +270,7 @@ function LandingPage() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
       <section id="additionalInfo">
         <div id="additionalInfoWrapper">
           <h1>
@@ -217,7 +282,7 @@ function LandingPage() {
       <div id="productInfo">
         <div>
           <span>Material</span>
-          <h1 id="cardColor">{materialVal}</h1>
+          <h1 id="cardColor"> {materialVal}</h1>
           <span>Thickness</span>
           <h1 id="thicknessValue">{thicknessVal}</h1>
           <span>Amount</span>
@@ -225,7 +290,7 @@ function LandingPage() {
         </div>
         <div>
           <span>Price</span>
-          <h1 id="cardColor">€ 0.00</h1>
+          <h1 id="priceAmount">{priceAmount}</h1>
           <span>Discount</span>
           <h1 id="thicknessValue">Sale 15% off</h1>
           <span>Total price</span>
