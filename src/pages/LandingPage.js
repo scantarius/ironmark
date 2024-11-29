@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "./LandingPage.css";
 import { NavLink } from "react-router-dom";
-import aboutBackground from "../pictures/aboutBackground.png";
-import goldenCard from "../pictures/order.jpg";
+import aboutBackground from "../pictures/aboutBackgroundPhone.jpg";
+import goldenCard from "../pictures/gold.jpg";
 import silverCard from "../pictures/silver.jpg";
 
 import Footer from "../components/Footer";
@@ -12,6 +12,11 @@ function LandingPage() {
   const [materialPhoto, setMaterialPhoto] = useState(false);
   const [gold, setGold] = useState(false);
   const [silver, setSilver] = useState(false);
+  const [activeGoldButton, setActiveGoldButton] = useState(false);
+  const [activeSilverButton, setActiveSilverButton] = useState(false);
+
+  const [checkedRadio, setCheckedRadio] = useState(false);
+  const [checkedRadio2, setCheckedRadio2] = useState(false);
 
   const [thickness, setThickness] = useState(false);
   const [five, setFive] = useState(false);
@@ -295,6 +300,8 @@ function LandingPage() {
 
   function changeMaterialToGold() {
     setMaterialPhoto(false);
+    setActiveGoldButton(true);
+    setActiveSilverButton(false);
     setGold(true);
     console.log(gold);
     localStorage.setItem("Material", "Gold");
@@ -305,6 +312,8 @@ function LandingPage() {
 
   function changeMaterialToSilver() {
     setMaterialPhoto(true);
+    setActiveSilverButton(true);
+    setActiveGoldButton(false);
     setSilver(true);
     console.log(silver);
     localStorage.setItem("Material", "Silver");
@@ -320,6 +329,7 @@ function LandingPage() {
     localStorage.setItem("Thickness", "0.5mm");
     var x = localStorage.getItem("Thickness");
     document.getElementById("thicknessValue").innerHTML = x;
+    setCheckedRadio(false);
     setPriceAmount();
   }
 
@@ -330,6 +340,7 @@ function LandingPage() {
     localStorage.setItem("Thickness", "0.8mm");
     var x = localStorage.getItem("Thickness");
     document.getElementById("thicknessValue").innerHTML = x;
+    setCheckedRadio(false);
     setPriceAmount();
   }
 
@@ -340,6 +351,7 @@ function LandingPage() {
     localStorage.setItem("Amount", "25");
     var x = localStorage.getItem("Amount");
     document.getElementById("amountValue").innerHTML = x;
+    setCheckedRadio2(false);
     setPriceAmount();
   }
 
@@ -350,6 +362,7 @@ function LandingPage() {
     localStorage.setItem("Amount", "50");
     var x = localStorage.getItem("Amount");
     document.getElementById("amountValue").innerHTML = x;
+    setCheckedRadio2(false);
     setPriceAmount();
   }
 
@@ -360,6 +373,7 @@ function LandingPage() {
     localStorage.setItem("Amount", "100");
     var x = localStorage.getItem("Amount");
     document.getElementById("amountValue").innerHTML = x;
+    setCheckedRadio2(false);
     setPriceAmount();
   }
 
@@ -385,9 +399,12 @@ function LandingPage() {
   }
 
   function loadDefaultItems() {
+    setActiveGoldButton();
     changeMaterialToGold();
     changeThicknessToFive();
     changeAmountToTwentyFive();
+    setCheckedRadio(true);
+    setCheckedRadio2(true);
   }
 
   return (
@@ -417,10 +434,18 @@ function LandingPage() {
 
       <section id="productCard">
         <div>
-          <button className="activeColor" onClick={changeMaterialToGold}>
+          <button
+            className={activeGoldButton ? "activeButton" : "inactiveButton"}
+            onClick={changeMaterialToGold}
+          >
             GOLD
           </button>
-          <button onClick={changeMaterialToSilver}>SILVER</button>
+          <button
+            className={activeSilverButton ? "activeButton" : "inactiveButton"}
+            onClick={changeMaterialToSilver}
+          >
+            SILVER
+          </button>
         </div>
         <div>
           <motion.img
@@ -429,9 +454,10 @@ function LandingPage() {
             }`}
             src={materialPhoto ? silverCard : goldenCard}
             alt="cardMaterial"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            initial={{ y: 10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -10, opacity: 0 }}
+            transition={{ duration: 2 }}
           />
         </div>
         <div>
@@ -446,7 +472,9 @@ function LandingPage() {
                   className={thickness}
                   onClick={changeThicknessToFive}
                 />
-                <span className="name">0.5mm</span>
+                <span className={checkedRadio ? "name__firstLoad" : "name"}>
+                  0.5mm
+                </span>
               </label>
               <label className="radio">
                 <input
@@ -470,7 +498,9 @@ function LandingPage() {
                   className={amount}
                   onClick={changeAmountToTwentyFive}
                 />
-                <span className="name2">25</span>
+                <span className={checkedRadio2 ? "name__firstLoad" : "name2"}>
+                  25
+                </span>
               </label>
               <label className="radio2">
                 <input
@@ -507,7 +537,7 @@ function LandingPage() {
           <span>Material</span>
           <h1 id="cardColor"> {materialVal}</h1>
           <span>Thickness</span>
-          <h1 id="thicknessValue">{thicknessVal}</h1>
+          <motion.h1 id="thicknessValue">{thicknessVal}</motion.h1>
           <span>Amount</span>
           <h1 id="amountValue">{amountVal}</h1>
         </div>

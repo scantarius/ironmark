@@ -23,6 +23,7 @@ function Contact() {
     document.getElementById("loaderWrapper").style.height = "100vh";
     document.getElementById("loaderWrapper").style.display = "flex";
     document.getElementById("loaderWrapper").style.alignItems = "center";
+
     window.scrollTo({ top: 0, left: 0 });
     if (style !== "loaderHidden") setStyle("loaderHidden");
     else setStyle("loaderVisible");
@@ -34,6 +35,8 @@ function Contact() {
   const material = localStorage.getItem("Material");
   const thickness = localStorage.getItem("Thickness");
   const amount = localStorage.getItem("Amount");
+  const Price = localStorage.getItem("Price");
+  const totalPriceAmount = localStorage.getItem("totalPriceAmount");
 
   const form = useRef();
 
@@ -69,8 +72,23 @@ function Contact() {
             exit={{ opacity: 0, transition: { duration: 6 } }}
           >
             <form ref={form} onSubmit={sendEmail}>
-              <input
-                value={material + ", " + thickness + ", " + amount}
+              <textarea
+                value={
+                  "Material: " +
+                  material +
+                  "\n" +
+                  "Thickness: " +
+                  thickness +
+                  "\n" +
+                  "Amount: " +
+                  amount +
+                  "\n" +
+                  "Price per one: " +
+                  Price +
+                  "\n" +
+                  "Final Price: " +
+                  totalPriceAmount
+                }
                 className="brutalist-input smooth-type"
                 readonly="readonly"
                 name="request_data"
@@ -142,7 +160,7 @@ function Contact() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0, transition: { duration: 6 } }}
             >
-              <h1 className="loaderThanksText">Thank you for your trust!</h1>
+              <h1 className="loaderThanksText">Thank you for trusting us!</h1>
             </motion.div>
           </div>
         </div>

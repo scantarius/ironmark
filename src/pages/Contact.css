@@ -45,6 +45,16 @@
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+input:valid {
+  border-color: #85e48c; /* Green */
+  animation: none;
+}
+
+input:invalid {
+  border-color: #c1121f; /* Red */
+  color: #c1121f;
+}
+
 @keyframes glitch {
   0% {
     transform: translate(0);
@@ -209,6 +219,10 @@
   50% {
     border-color: var(--lightgreen);
   }
+}
+
+textarea {
+  height: 80px;
 }
 
 #submitForm {

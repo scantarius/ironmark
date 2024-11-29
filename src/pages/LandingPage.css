@@ -23,7 +23,7 @@
 }
 
 .textBox h1 {
-  color: #fff;
+  color: #000;
   width: 100%;
   text-transform: uppercase;
   width: 100%;
@@ -102,7 +102,7 @@
 }
 
 #productCard > div:nth-child(1) > button {
-  width: 38%;
+  width: 35%;
   padding: 15px;
   border-radius: 20px 20px 0 0;
   background: lightblue;
@@ -138,16 +138,17 @@
   );
 }
 
-.activeColor {
+.activeButton {
   transform: translate(4px);
   overflow: hidden;
+  overflow-x: hidden;
 }
 
-.activeColor:before {
+.activeButton:before {
   animation: shine 3s ease-out infinite;
 }
 
-.activeColor::before {
+.activeButton::before {
   content: "";
   position: absolute;
   width: 100px;
@@ -175,25 +176,11 @@
   }
 }
 
-#productCard > div:nth-child(2) {
-  transition: all 3s;
-}
-
 #productCard > div:nth-child(2) > img {
   border-radius: 20px;
   width: 80%;
   height: 450px;
   object-fit: cover;
-  animation-delay: 2s;
-}
-
-@keyframes fade {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 /* otherCardOptions */
@@ -220,7 +207,7 @@
   gap: 10px;
   width: 36%;
   padding: 15px;
-  background: #eee;
+  /*background: #eee;*/
 }
 
 /* radio inputs */
@@ -232,7 +219,6 @@
   flex-wrap: wrap;
   gap: 10px;
   border-radius: 0.5rem;
-  background-color: #eee;
   box-sizing: border-box;
   box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.4);
   padding: 0.25rem;
@@ -253,7 +239,9 @@
 }
 
 .radio-inputs .radio .name,
-.radio-inputs2 .radio2 .name2 {
+.radio-inputs2 .radio2 .name2,
+.radio-inputs .radio .name__firstLoad,
+.radio-inputs2 .radio2 .name__firstLoad {
   display: flex;
   cursor: pointer;
   align-items: center;
@@ -267,7 +255,13 @@
 
 .radio-inputs .radio input:checked + .name,
 .radio-inputs2 .radio2 input:checked + .name2 {
-  background-color: #fff;
+  background-color: #eee;
+  font-weight: 600;
+}
+
+.radio-inputs .radio input + .name__firstLoad,
+.radio-inputs2 .radio2 input + .name__firstLoad {
+  background-color: #eee;
   font-weight: 600;
 }
 
@@ -281,7 +275,6 @@
   text-align: center;
   padding: 10px 0 10px 0;
   margin: 0 0 20px 0;
-  background-color: #eee;
   color: #000;
   font-family: "Poppins", sans-serif;
 }
@@ -317,6 +310,22 @@
   font-weight: 400;
   font-size: 24px;
   width: 100%;
+}
+
+.thicknessValueAnimation {
+  animation: slide-in-top 0.3s both;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 #productInfo h3 {
@@ -449,13 +458,20 @@ button {
     gap: 10px;
     width: 100%;
     padding: 15px;
-    background: #eee;
   }
 }
 
 @media (width <= 426px) {
   #productInfo {
     gap: 10px;
+  }
+
+  #productCard > div:nth-child(1) > button {
+    width: 43%;
+  }
+
+  #productCard > div:nth-child(2) > img {
+    width: 95%;
   }
 
   #productInfo > div {
