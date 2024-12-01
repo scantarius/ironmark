@@ -338,7 +338,7 @@ a:link {
   }
 }
 
-@media (width <= 426px) {
+@media (width <= 431px) {
   .header__menuItems {
     display: none;
     text-align: center;
