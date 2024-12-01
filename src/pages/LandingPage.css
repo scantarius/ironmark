@@ -8,7 +8,6 @@
 .aboutBackground {
   width: 100%;
   height: 100vh;
-  object-fit: cover;
   z-index: -1;
   object-fit: cover;
 }
@@ -513,6 +512,14 @@ button {
 
   #productInfo h1 {
     display: block;
+    font-size: 18px;
+  }
+
+  .textBox {
+    top: 45%;
+  }
+
+  .textBox h1 {
     font-size: 18px;
   }
 }
