@@ -183,6 +183,21 @@
   object-fit: cover;
 }
 
+.materialGoldPhoto,
+.materialSilverPhoto {
+  animation-delay: 1s;
+  animation: fade 2s alternate;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 /* otherCardOptions */
 
 #productCard > div:nth-child(3) {
@@ -459,6 +474,11 @@ button {
     width: 100%;
     padding: 15px;
   }
+
+  #productCard > div:nth-child(2) > img {
+    width: 95%;
+    height: 350px;
+  }
 }
 
 @media (width <= 426px) {
@@ -472,6 +492,7 @@ button {
 
   #productCard > div:nth-child(2) > img {
     width: 95%;
+    height: 300px;
   }
 
   #productInfo > div {

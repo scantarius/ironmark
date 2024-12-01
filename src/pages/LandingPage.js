@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { animate, motion } from "framer-motion";
 import "./LandingPage.css";
 import { NavLink } from "react-router-dom";
-import aboutBackground from "../pictures/aboutBackgroundPhone.jpg";
+import aboutBackground from "../pictures/aboutBackground.jpg";
+import aboutBackgroundPhone from "../pictures/aboutBackgroundPhone.jpg";
 import goldenCard from "../pictures/gold.jpg";
 import silverCard from "../pictures/silver.jpg";
 
@@ -412,8 +413,10 @@ function LandingPage() {
       <section id="landingPage" onLoad={loadDefaultItems}>
         <div id="landingPageWrapper">
           <img
+            src={
+              window.innerWidth > 767 ? aboutBackground : aboutBackgroundPhone
+            }
             className="aboutBackground"
-            src={aboutBackground}
             alt={aboutBackground}
           />
           <div className="textBox">
