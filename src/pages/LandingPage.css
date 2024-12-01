@@ -446,6 +446,22 @@ button {
 
 /* Resposivity */
 
+@media (width <= 1024px) {
+  #landingPageWrapper {
+    height: 110vh;
+    margin-top: -100px;
+    position: relative;
+    width: 100%;
+  }
+
+  .aboutBackground {
+    width: 100%;
+    height: 110vh;
+    z-index: -1;
+    object-fit: cover;
+  }
+}
+
 @media (width <= 768px) {
   #productInfo {
     gap: 60px;
