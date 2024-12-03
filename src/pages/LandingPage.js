@@ -535,7 +535,7 @@ function LandingPage() {
           </h1>
         </div>
       </section>
-      <div id="productInfo">
+      <section id="productInfo">
         <div>
           <span>Material</span>
           <h1 id="cardColor"> {materialVal}</h1>
@@ -553,14 +553,14 @@ function LandingPage() {
           <h3 id="oldTotalPriceAmount">{oldTotalPriceAmount}</h3>
           <h1 id="totalPriceAmount">{totalPriceAmount}</h1>
         </div>
-      </div>
-      <div id="processButtonWrapper">
+      </section>
+      <section id="processButtonWrapper">
         <button id="processButton">
           <NavLink to="/contact" onClick={scrollToTop} className="btn">
             <span className="spn">REQUEST</span>
           </NavLink>
         </button>
-      </div>
+      </section>
       <Footer />
     </>
   );

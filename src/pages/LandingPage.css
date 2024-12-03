@@ -104,7 +104,7 @@
   width: 35%;
   padding: 15px;
   border-radius: 20px 20px 0 0;
-  background: lightblue;
+  color: #000;
 }
 
 #productCard > div:nth-child(1) > button:hover {
@@ -323,7 +323,7 @@
 #productInfo h1 {
   font-weight: 400;
   font-size: 24px;
-  width: 100%;
+  white-space: nowrap;
 }
 
 .thicknessValueAnimation {
@@ -357,10 +357,12 @@
   padding: 20px 120px;
   background: radial-gradient(
     circle at -8.9% 55.2%,
-    rgb(255, 124, 0) 0%,
-    rgb(255, 124, 0) 15.9%,
-    rgb(255, 163, 77) 15.9%,
-    rgb(255, 163, 77) 24.4%,
+
+    #999 0%,
+    #ccc 15.9%,
+
+    #d1b464 15.9%,
+    #d1b464 24.4%,
     #222222 24.5%,
     #222222 66%
   );
@@ -446,6 +448,185 @@ button {
 
 /* Resposivity */
 
+@media (width <= 2560px) {
+  #landingPageWrapper {
+    height: 100vh;
+    margin-top: -200px;
+  }
+
+  .aboutBackground {
+    height: 100vh;
+  }
+
+  .textBox h1 {
+    font-size: 36px;
+  }
+
+  .textBox button {
+    padding: 24px;
+    font-size: 20px;
+  }
+
+  #productCard > div:nth-child(1) > button {
+    padding: 20px;
+    font-size: 28px;
+  }
+
+  #productCard > div:nth-child(2) > img {
+    height: 650px;
+  }
+
+  .radio-inputs,
+  .radio-inputs2 {
+    width: 500px;
+    font-size: 26px;
+  }
+
+  .otherCardOptions__one span,
+  .otherCardOptions__two span {
+    font-size: 24px;
+  }
+
+  #additionalInfo h1 {
+    font-size: 28px;
+  }
+
+  #productInfo > div {
+    display: block;
+    width: 15%;
+    height: 400px;
+    padding: 20px 140px;
+  }
+
+  #productInfo span {
+    font-size: 24px;
+  }
+
+  #productInfo h1 {
+    font-size: 32px;
+  }
+
+  .btn {
+    padding: 30px 60px;
+    font-size: 24px;
+  }
+}
+
+@media (width <= 1920px) {
+  #landingPageWrapper {
+    margin-top: -100px;
+  }
+
+  .textBox h1 {
+    font-size: 24px;
+  }
+
+  .textBox button {
+    padding: 18px;
+  }
+
+  #productCard > div:nth-child(1) > button {
+    padding: 14px;
+    font-size: 16px;
+  }
+
+  #productCard > div:nth-child(2) > img {
+    height: 450px;
+  }
+
+  .radio-inputs,
+  .radio-inputs2 {
+    width: 450px;
+  }
+
+  .otherCardOptions__one span,
+  .otherCardOptions__two span {
+    font-size: 18px;
+  }
+
+  #additionalInfo h1 {
+    font-size: 20px;
+  }
+
+  #productInfo > div {
+    height: 300px;
+    padding: 20px 140px;
+  }
+
+  #productInfo span {
+    font-size: 12px;
+  }
+
+  #productInfo h1 {
+    font-size: 24px;
+  }
+
+  .btn {
+    padding: 15px 30px;
+    font-size: 20px;
+  }
+}
+
+@media (width <= 1440px) {
+  #landingPageWrapper {
+    height: 102vh;
+    margin-top: -150px;
+  }
+
+  .aboutBackground {
+    height: 102vh;
+  }
+
+  .textBox h1 {
+    font-size: 24px;
+  }
+
+  .textBox button {
+    padding: 18px;
+    font-size: 18px;
+  }
+
+  #productCard > div:nth-child(1) > button {
+    padding: 15px;
+    font-size: 20px;
+  }
+
+  #productCard > div:nth-child(2) > img {
+    height: 500px;
+  }
+
+  .radio-inputs,
+  .radio-inputs2 {
+    width: 450px;
+  }
+
+  .otherCardOptions__one span,
+  .otherCardOptions__two span {
+    font-size: 20px;
+  }
+
+  #additionalInfo h1 {
+    font-size: 24px;
+  }
+
+  #productInfo > div {
+    height: 350px;
+  }
+
+  #productInfo span {
+    font-size: 20px;
+  }
+
+  #productInfo h1 {
+    font-size: 26px;
+  }
+
+  .btn {
+    padding: 20px 40px;
+    font-size: 18px;
+  }
+}
+
 @media (width <= 1024px) {
   #landingPageWrapper {
     height: 120vh;
@@ -460,11 +641,34 @@ button {
     z-index: -1;
     object-fit: cover;
   }
+
+  #productInfo span {
+    font-size: 14px;
+  }
+
+  #productInfo h1 {
+    white-space: nowrap;
+    font-size: 20px;
+  }
+}
+
+@media (width <= 830px) {
+  #productInfo {
+    gap: 20px;
+  }
+}
+
+@media (width <= 1180px) {
+  .otherCardOptions__one,
+  .otherCardOptions__two {
+    gap: 10px;
+    width: 100%;
+  }
 }
 
 @media (width <= 768px) {
   #productInfo {
-    gap: 60px;
+    gap: 30px;
   }
 
   #productInfo > div {
@@ -494,16 +698,33 @@ button {
     width: 95%;
     height: 350px;
   }
+
+  #productInfo span {
+    font-size: 14px;
+  }
+
+  #productInfo h1 {
+    font-size: 18px;
+  }
+}
+
+@media (width <= 447px) {
+  #productInfo span {
+    font-size: 14px;
+  }
+
+  #productInfo h1 {
+    font-size: 18px;
+  }
 }
 
 @media (width <= 431px) {
   #landingPageWrapper {
-    height: 80vh;
+    height: 100vh;
   }
 
   .aboutBackground {
-    height: 80vh;
-    object-fit: contain;
+    height: 100vh;
   }
 
   #productInfo {
@@ -517,6 +738,16 @@ button {
   #productCard > div:nth-child(2) > img {
     width: 95%;
     height: 300px;
+  }
+
+  .radio-inputs,
+  .radio-inputs2 {
+    width: 300px;
+  }
+
+  .otherCardOptions__one span,
+  .otherCardOptions__two span {
+    font-size: 14px;
   }
 
   #productInfo > div {

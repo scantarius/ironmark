@@ -115,19 +115,112 @@ footer > div:nth-child(1) > h1 {
   color: green;
 }
 
-@media (width <= 426px) {
+/* Resposivity */
+
+@media (width <= 2561px) {
   footer > div:nth-child(1) {
-    order: 2;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  footer > div:nth-child(2) {
+    transform: scale(1.4);
+  }
+
+  #createdBy {
+    font-size: 24px;
+    padding-top: 60px;
+    margin-top: -4px;
+    border: none;
+  }
+}
+
+@media (width <= 1440px) {
+  footer > div:nth-child(1) {
+    font-size: 14px;
+  }
+
+  #createdBy {
+    font-size: 20px;
+    margin-top: -4px;
+  }
+}
+
+@media (width <= 1024px) {
+  footer > div:nth-child(1) {
+    font-size: 10px;
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  footer > div:nth-child(2) {
+    transform: scale(1.2);
+  }
+
+  #createdBy {
+    font-size: 18px;
+  }
+}
+
+@media (width <= 768px) {
+  footer > div:nth-child(1) {
     font-size: 8px;
     text-align: center;
+    margin-top: 20px;
   }
+
+  footer > div:nth-child(2) {
+    transform: scale(1);
+  }
+
+  #createdBy {
+    font-size: 14px;
+    padding-top: 0px;
+  }
+}
+
+@media (width <= 685px) {
+  footer > div:nth-child(1) {
+    order: 2;
+    font-size: 10px;
+    text-align: center;
+    width: 100%;
+  }
+
   footer > div:nth-child(2) {
     order: 1;
     transform: scale(0.9);
   }
+
   #createdBy {
     font-size: 12px;
-    padding-top: 40px;
-    border-top: none;
+    padding-top: 80px;
+    border: none;
+  }
+}
+
+@media (width <= 430px) {
+  footer > div:nth-child(1) {
+    font-size: 8px;
+  }
+
+  #createdBy {
+    font-size: 12px;
+    margin-top: -10px;
+  }
+}
+
+@media (width <= 320px) {
+  footer {
+    width: 100%;
+  }
+  footer > div:nth-child(1) {
+    font-size: 8px;
+  }
+
+  #createdBy {
+    font-size: 12px;
+    padding-top: 60px;
   }
 }
