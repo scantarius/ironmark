@@ -93,7 +93,7 @@ function Contact() {
                 readonly="readonly"
                 name="request_data"
               />
-              <label className="brutalist-label">You choosed</label>
+              <label className="brutalist-label">Your request</label>
               <div className="brutalist-container">
                 <input
                   onKeyDown={handleEnter}
@@ -154,14 +154,20 @@ function Contact() {
           </motion.div>
 
           <div id="loaderWrapper">
+            <div id="loaderThanksText">
+              <h1>Dear,</h1>
+              <h1> We have successfully received your email.</h1>
+              <h1>
+                Our team will review it and get back to you as soon as possible.
+              </h1>
+              <h1>Thank you for your patience and trust. Best regards.</h1>
+            </div>
             <motion.div
               className={style}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0, transition: { duration: 6 } }}
-            >
-              <h1 className="loaderThanksText">Thank you for trusting us!</h1>
-            </motion.div>
+            ></motion.div>
           </div>
         </div>
       </div>

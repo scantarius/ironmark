@@ -414,7 +414,7 @@ function LandingPage() {
         <div id="landingPageWrapper">
           <img
             src={
-              window.innerWidth > 767 ? aboutBackground : aboutBackgroundPhone
+              window.innerWidth > 500 ? aboutBackground : aboutBackgroundPhone
             }
             className="aboutBackground"
             alt={aboutBackground}
@@ -457,10 +457,6 @@ function LandingPage() {
             }`}
             src={materialPhoto ? silverCard : goldenCard}
             alt="cardMaterial"
-            initial={{ y: 10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -10, opacity: 0 }}
-            transition={{ duration: 2 }}
           />
         </div>
         <div>

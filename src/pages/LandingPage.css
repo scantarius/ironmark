@@ -138,9 +138,8 @@
 }
 
 .activeButton {
-  transform: translate(4px);
+  transform: translate(2px);
   overflow: hidden;
-  overflow-x: hidden;
 }
 
 .activeButton:before {
@@ -291,10 +290,13 @@
   margin: 0 0 20px 0;
   color: #000;
   font-family: "Poppins", sans-serif;
+  font-weight: 380;
+  font-style: normal;
 }
 
 #additionalInfo span {
-  color: blue;
+  color: #000;
+  font-weight: 500;
 }
 
 /* productInfo */
@@ -367,6 +369,10 @@
     #222222 66%
   );
   border-radius: 20px;
+}
+
+#discountAmount {
+  color: green;
 }
 
 /* processButton */
@@ -514,7 +520,7 @@ button {
 
 @media (width <= 1920px) {
   #landingPageWrapper {
-    margin-top: -100px;
+    margin-top: -140px;
   }
 
   .textBox h1 {
@@ -627,10 +633,18 @@ button {
   }
 }
 
+@media (width <= 1180px) {
+  .otherCardOptions__one,
+  .otherCardOptions__two {
+    gap: 10px;
+    width: 100%;
+  }
+}
+
 @media (width <= 1024px) {
   #landingPageWrapper {
     height: 120vh;
-    margin-top: -100px;
+    margin-top: -180px;
     position: relative;
     width: 100%;
   }
@@ -639,7 +653,7 @@ button {
     width: 100%;
     height: 120vh;
     z-index: -1;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   #productInfo span {
@@ -652,21 +666,28 @@ button {
   }
 }
 
-@media (width <= 830px) {
+@media (width <= 943px) {
+  #landingPageWrapper {
+    margin-top: -200px;
+  }
   #productInfo {
     gap: 20px;
   }
 }
 
-@media (width <= 1180px) {
-  .otherCardOptions__one,
-  .otherCardOptions__two {
-    gap: 10px;
-    width: 100%;
+@media (width <= 840px) {
+  #landingPageWrapper {
+    margin-top: -230px;
+  }
+  #productInfo {
+    gap: 30px;
   }
 }
 
 @media (width <= 768px) {
+  #landingPageWrapper {
+    margin-top: -250px;
+  }
   #productInfo {
     gap: 30px;
   }
@@ -708,7 +729,16 @@ button {
   }
 }
 
-@media (width <= 447px) {
+@media (width <= 690px) {
+  #landingPageWrapper {
+    margin-top: -300px;
+  }
+}
+
+@media (width <= 540px) {
+  #landingPageWrapper {
+    margin-top: -310px;
+  }
   #productInfo span {
     font-size: 14px;
   }
@@ -718,21 +748,29 @@ button {
   }
 }
 
-@media (width <= 431px) {
+@media (width <= 500px) {
   #landingPageWrapper {
     height: 100vh;
   }
 
   .aboutBackground {
-    height: 100vh;
+    object-fit: cover;
+    margin-top: 200px;
   }
 
   #productInfo {
     gap: 10px;
   }
 
+  #productCard {
+    margin-top: 290px;
+  }
+
   #productCard > div:nth-child(1) > button {
-    width: 43%;
+    width: 40%;
+    padding: 10px;
+    font-size: 14px;
+    color: #000;
   }
 
   #productCard > div:nth-child(2) > img {
@@ -752,7 +790,7 @@ button {
 
   #productInfo > div {
     display: block;
-    width: 25%;
+    width: 20%;
   }
 
   #additionalInfo h1 {
@@ -772,10 +810,33 @@ button {
   }
 
   .textBox {
-    top: 45%;
+    top: 85%;
   }
 
   .textBox h1 {
-    font-size: 18px;
+    font-size: 16px;
+  }
+
+  .moreAboutButton {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .textBox button {
+    padding: 12px;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 40px;
+  }
+
+  .animation > h1 {
+    margin: 25px 0;
+  }
+}
+
+@media (width <= 350px) {
+  #productInfo > div {
+    width: 15%;
   }
 }

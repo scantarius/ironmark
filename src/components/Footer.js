@@ -7,10 +7,7 @@ function Footer() {
     <>
       <footer>
         <div>
-          <h1>iRONMARK. | All rights reserved.</h1>
-          <h1>
-            ® <span>2024</span>
-          </h1>
+          <h1>Copyright © iRONMARK. 2024</h1>
         </div>
         <div id="footerSocialMedia">
           <div className="footerCard">
@@ -61,14 +58,16 @@ function Footer() {
         </div>
       </footer>
       <div id="createdBy">
-        Website designed & developed by{" "}
-        <NavLink
-          to="https://github.com/scantarius"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          scantarius
-        </NavLink>
+        <h1>
+          Website designed & developed by
+          <NavLink
+            to="https://github.com/scantarius"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            scantarius
+          </NavLink>
+        </h1>
       </div>
     </>
   );
