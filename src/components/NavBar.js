@@ -10,6 +10,10 @@ function NavBar() {
     setIsOpen((open) => !open);
   };
 
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
     <>
       <motion.nav
@@ -29,6 +33,7 @@ function NavBar() {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: "-100%", opacity: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
+                onClick={closeMenu}
               ></motion.h1>
               <motion.h1
                 className="logoTitleDesign"
@@ -36,6 +41,7 @@ function NavBar() {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: "-100%", opacity: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
+                onClick={closeMenu}
               ></motion.h1>
             </NavLink>
           </li>
@@ -81,6 +87,7 @@ function NavBar() {
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: "-100%", opacity: 0 }}
                   transition={{ duration: 0.5, delay: 0.4 }}
+                  onClick={closeMenu}
                 >
                   About
                 </motion.span>
@@ -92,6 +99,7 @@ function NavBar() {
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: "-100%", opacity: 0 }}
                   transition={{ duration: 0.5, delay: 0.8 }}
+                  onClick={closeMenu}
                 >
                   Contact
                 </motion.span>

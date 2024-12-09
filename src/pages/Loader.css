@@ -61,11 +61,60 @@
   }
 }
 
-.loaderHidden {
+#loaderWrapper {
+  margin-top: -100px;
   display: none;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
 }
 
-.loaderThanksText {
-  display: inline-flex;
+#loaderWrapper h1 {
+  font-size: 20px;
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+#loaderThanksText {
+  text-align: left;
+  margin-top: -50px;
   font-size: 16px;
+}
+
+/* RESPONSIVITY */
+
+@media (width <= 2561px) {
+  #loaderWrapper {
+    margin-top: -180px;
+    transform: scale(1.9);
+  }
+
+  #loaderWrapper h1 {
+    width: 100%;
+  }
+}
+
+@media (width <= 2561px) {
+  #loaderWrapper {
+    margin-top: -180px;
+    transform: scale(0.9);
+  }
+
+  #loaderWrapper h1 {
+    width: 100%;
+  }
+}
+
+@media (width <= 768px) {
+  #loaderWrapper {
+    transform: scale(0.6);
+  }
+}
+
+@media (width <= 430px) {
+  #loaderWrapper h1 {
+    font-size: 16px;
+  }
 }

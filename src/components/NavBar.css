@@ -76,10 +76,6 @@ a:link {
   background-color: #fff;
 }
 
-#header.is-closed {
-  transition: all 2s;
-}
-
 /* SOCIAL MEDIA */
 
 .socialMedia {
@@ -198,6 +194,17 @@ a:link {
     font-size: 32px;
     margin-bottom: 10px;
     gap: 600px;
+  }
+}
+
+@media (width <= 1920px) {
+  #header ul > li > a,
+  .logoTitle::after {
+    font-size: 24px;
+  }
+
+  .header__logo {
+    font-size: 24px;
   }
 }
 

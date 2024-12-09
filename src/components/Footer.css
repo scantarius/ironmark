@@ -130,14 +130,18 @@ footer > div:nth-child(1) > h1 {
 /* Resposivity */
 
 @media (width <= 2561px) {
+  footer {
+    padding-top: 20px;
+  }
+
   footer > div:nth-child(1) {
     font-size: 18px;
     text-align: center;
-    margin-top: 40px;
+    margin-top: 20px;
   }
 
   footer > div:nth-child(2) {
-    transform: scale(1.4);
+    transform: scale(1.7);
   }
 
   #createdBy {
@@ -146,11 +150,20 @@ footer > div:nth-child(1) > h1 {
     margin-top: -4px;
     border: none;
   }
+
+  #createdBy h1,
+  #createdBy span {
+    font-size: 24px;
+    margin-top: -4px;
+  }
 }
 
 @media (width <= 1920px) {
+  footer {
+    padding: 0;
+  }
   footer > div:nth-child(1) {
-    font-size: 10px;
+    font-size: 8px;
   }
 
   footer > div:nth-child(2) {
@@ -158,27 +171,46 @@ footer > div:nth-child(1) > h1 {
   }
 
   #createdBy {
-    font-size: 14px;
     margin-top: -4px;
+    padding: 10px;
+  }
+
+  #createdBy h1,
+  #createdBy span {
+    font-size: 12px;
   }
 }
 
 @media (width <= 1440px) {
   footer > div:nth-child(1) {
     font-size: 14px;
+    margin-top: 15px;
+  }
+
+  footer > div:nth-child(2) {
+    transform: scale(1.2);
   }
 
   #createdBy {
-    font-size: 20px;
+    font-size: 40px;
     margin-top: -4px;
+    padding-top: 20px;
+  }
+
+  #createdBy h1,
+  #createdBy span {
+    font-size: 16px;
   }
 }
 
 @media (width <= 1024px) {
+  footer {
+    padding-top: 0;
+  }
   footer > div:nth-child(1) {
-    font-size: 10px;
+    font-size: 12px;
     text-align: center;
-    margin-top: 40px;
+    margin-top: 10px;
   }
 
   footer > div:nth-child(2) {
@@ -187,6 +219,9 @@ footer > div:nth-child(1) > h1 {
 
   #createdBy {
     font-size: 18px;
+    margin-top: -40px;
+    font-size: 24px;
+    padding-top: 50px;
   }
 }
 
@@ -194,16 +229,20 @@ footer > div:nth-child(1) > h1 {
   footer > div:nth-child(1) {
     font-size: 8px;
     text-align: center;
-    margin-top: 20px;
   }
 
   footer > div:nth-child(2) {
-    transform: scale(1);
+    transform: scale(0.8);
   }
 
   #createdBy {
     font-size: 14px;
-    padding-top: 0px;
+    padding-top: 30px;
+  }
+
+  #createdBy h1,
+  #createdBy span {
+    font-size: 12px;
   }
 }
 
@@ -213,11 +252,12 @@ footer > div:nth-child(1) > h1 {
     font-size: 10px;
     text-align: center;
     width: 100%;
+    margin-top: 10px;
   }
 
   footer > div:nth-child(2) {
     order: 1;
-    transform: scale(0.9);
+    transform: scale(0.8);
   }
 
   #createdBy {
@@ -230,13 +270,13 @@ footer > div:nth-child(1) > h1 {
 @media (width <= 431px) {
   footer > div:nth-child(1) {
     font-size: 7px;
-    margin-top: 10px;
+    margin-top: 4px;
   }
 
   #createdBy {
     font-size: 12px;
     margin-top: -10px;
-    padding-top: 20px;
+    padding-top: 30px;
   }
 }
 
@@ -250,6 +290,6 @@ footer > div:nth-child(1) > h1 {
 
   #createdBy {
     font-size: 12px;
-    padding-top: 60px;
+    padding-top: 40px;
   }
 }

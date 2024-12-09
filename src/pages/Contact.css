@@ -227,11 +227,10 @@ textarea {
 }
 
 #submitForm {
-  width: 300px;
+  width: 285px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 70px 0 20px 0;
   transition: all 1s ease-in;
 }
 
@@ -240,23 +239,33 @@ textarea {
   background: var(--lightgreen);
 }
 
-#loaderWrapper {
-}
-
-#loaderThanksText {
-  text-align: left;
-  margin-top: -50px;
-}
-
 /* Resposivity */
 
-@media (width <= 430px) {
-  #loaderWrapper {
-    transform: scale(0.6);
+@media (width <= 2561px) {
+  #contactForm {
+    height: 80vh;
   }
-  #loaderThanksText h1 {
-    font-size: 14px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
+}
+
+@media (width <= 1920px) {
+  #contactForm {
+    height: 120vh;
+  }
+}
+
+@media (width <= 430px) {
+  #contactForm {
+    height: 130vh;
+  }
+}
+
+@media (width <= 320px) {
+  .brutalist-container,
+  #submitForm {
+    width: 200px;
+  }
+
+  #submitForm {
+    width: 240px;
   }
 }

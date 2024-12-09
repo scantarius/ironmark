@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { animate, motion } from "framer-motion";
 import "./LandingPage.css";
 import { NavLink } from "react-router-dom";
 import aboutBackground from "../pictures/aboutBackground.jpg";
@@ -329,7 +328,11 @@ function LandingPage() {
     console.log(five);
     localStorage.setItem("Thickness", "0.5mm");
     var x = localStorage.getItem("Thickness");
+    document
+      .getElementById("thicknessValue")
+      .classList.toggle("thicknessAnimation");
     document.getElementById("thicknessValue").innerHTML = x;
+
     setCheckedRadio(false);
     setPriceAmount();
   }
@@ -340,6 +343,9 @@ function LandingPage() {
     console.log(eight);
     localStorage.setItem("Thickness", "0.8mm");
     var x = localStorage.getItem("Thickness");
+    document
+      .getElementById("thicknessValue")
+      .classList.toggle("thicknessAnimation");
     document.getElementById("thicknessValue").innerHTML = x;
     setCheckedRadio(false);
     setPriceAmount();
@@ -441,17 +447,25 @@ function LandingPage() {
             className={activeGoldButton ? "activeButton" : "inactiveButton"}
             onClick={changeMaterialToGold}
           >
-            GOLD
+            <span>G</span>
+            <span>O</span>
+            <span>L</span>
+            <span>D</span>
           </button>
           <button
             className={activeSilverButton ? "activeButton" : "inactiveButton"}
             onClick={changeMaterialToSilver}
           >
-            SILVER
+            <span>S</span>
+            <span>I</span>
+            <span>L</span>
+            <span>V</span>
+            <span>E</span>
+            <span>R</span>
           </button>
         </div>
         <div>
-          <motion.img
+          <img
             className={`materialPhoto ${
               materialPhoto ? "materialSilverPhoto" : "materialGoldPhoto"
             }`}
@@ -536,7 +550,7 @@ function LandingPage() {
           <span>Material</span>
           <h1 id="cardColor"> {materialVal}</h1>
           <span>Thickness</span>
-          <motion.h1 id="thicknessValue">{thicknessVal}</motion.h1>
+          <h1 id="thicknessValue">{thicknessVal}</h1>
           <span>Amount</span>
           <h1 id="amountValue">{amountVal}</h1>
         </div>

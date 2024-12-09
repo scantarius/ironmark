@@ -20,9 +20,7 @@ function Contact() {
   }
 
   const changeStyle = () => {
-    document.getElementById("loaderWrapper").style.height = "100vh";
     document.getElementById("loaderWrapper").style.display = "flex";
-    document.getElementById("loaderWrapper").style.alignItems = "center";
 
     window.scrollTo({ top: 0, left: 0 });
     if (style !== "loaderHidden") setStyle("loaderHidden");
@@ -154,7 +152,7 @@ function Contact() {
           </motion.div>
 
           <div id="loaderWrapper">
-            <div id="loaderThanksText">
+            <div className="loaderThanksText">
               <h1>Dear,</h1>
               <h1> We have successfully received your email.</h1>
               <h1>
