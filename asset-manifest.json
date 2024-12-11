@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ironmark/static/css/main.f676a930.css",
-    "main.js": "/ironmark/static/js/main.572a4e48.js",
+    "main.js": "/ironmark/static/js/main.2096e0ea.js",
     "static/js/453.a6bc6da8.chunk.js": "/ironmark/static/js/453.a6bc6da8.chunk.js",
     "static/media/aboutBackground.jpg": "/ironmark/static/media/aboutBackground.3f9b5542d3bf06de6f23.jpg",
     "static/media/gold.jpg": "/ironmark/static/media/gold.49729f40e97fb2ed863c.jpg",
@@ -9,11 +9,11 @@
     "static/media/aboutBackgroundPhone.jpg": "/ironmark/static/media/aboutBackgroundPhone.430fbd85098abc2e2b1a.jpg",
     "index.html": "/ironmark/index.html",
     "main.f676a930.css.map": "/ironmark/static/css/main.f676a930.css.map",
-    "main.572a4e48.js.map": "/ironmark/static/js/main.572a4e48.js.map",
+    "main.2096e0ea.js.map": "/ironmark/static/js/main.2096e0ea.js.map",
     "453.a6bc6da8.chunk.js.map": "/ironmark/static/js/453.a6bc6da8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f676a930.css",
-    "static/js/main.572a4e48.js"
+    "static/js/main.2096e0ea.js"
   ]
 }
