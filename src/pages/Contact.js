@@ -61,7 +61,7 @@ function Contact() {
 
   return (
     <>
-      <div id="contactForm">
+      <section id="contactForm">
         <div id="contactFormWrapper">
           <motion.div
             className={formStyle}
@@ -114,9 +114,10 @@ function Contact() {
                   name="company_name"
                   minlength="3"
                   maxlength="20"
-                  required
                 />
-                <label className="brutalist-label">Company Name</label>
+                <label className="brutalist-label">
+                  Company Name (Optional)
+                </label>
                 <div className="brutalist-container">
                   <input
                     onKeyDown={handleEnter}
@@ -168,7 +169,7 @@ function Contact() {
             ></motion.div>
           </div>
         </div>
-      </div>
+      </section>
       <Footer />
     </>
   );
