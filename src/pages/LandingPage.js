@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./LandingPage.css";
 import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 import aboutBackground from "../pictures/aboutBackground.jpg";
 import aboutBackgroundPhone from "../pictures/aboutBackgroundPhone.jpg";
 import goldenCard from "../pictures/gold.jpg";
@@ -328,11 +329,7 @@ function LandingPage() {
     console.log(five);
     localStorage.setItem("Thickness", "0.5mm");
     var x = localStorage.getItem("Thickness");
-    document
-      .getElementById("thicknessValue")
-      .classList.toggle("thicknessAnimation");
     document.getElementById("thicknessValue").innerHTML = x;
-
     setCheckedRadio(false);
     setPriceAmount();
   }
@@ -343,9 +340,6 @@ function LandingPage() {
     console.log(eight);
     localStorage.setItem("Thickness", "0.8mm");
     var x = localStorage.getItem("Thickness");
-    document
-      .getElementById("thicknessValue")
-      .classList.toggle("thicknessAnimation");
     document.getElementById("thicknessValue").innerHTML = x;
     setCheckedRadio(false);
     setPriceAmount();
@@ -548,20 +542,74 @@ function LandingPage() {
       <section id="productInfo">
         <div>
           <span>Material</span>
-          <h1 id="cardColor"> {materialVal}</h1>
+          <motion.h1
+            id="cardColor"
+            key={materialVal}
+            initial={{ y: "-100%", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: "-100%", opacity: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            {materialVal}
+          </motion.h1>
           <span>Thickness</span>
-          <h1 id="thicknessValue">{thicknessVal}</h1>
+          <motion.h1
+            id="thicknessValue"
+            key={thicknessVal}
+            initial={{ y: "-100%", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: "-100%", opacity: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            {thicknessVal}
+          </motion.h1>
           <span>Amount</span>
-          <h1 id="amountValue">{amountVal}</h1>
+          <motion.h1
+            id="amountValue"
+            key={amountVal}
+            initial={{ y: "-100%", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: "-100%", opacity: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            {amountVal}
+          </motion.h1>
         </div>
         <div>
           <span>Price</span>
-          <h1 id="priceAmount">{priceAmount}</h1>
+          <motion.h1
+            id="priceAmount"
+            key={priceAmount}
+            initial={{ y: "-100%", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: "-100%", opacity: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            {priceAmount}
+          </motion.h1>
           <span>Discount</span>
           <h1 id="discountAmount">{discountAmount}</h1>
           <span>Total price</span>
-          <h3 id="oldTotalPriceAmount">{oldTotalPriceAmount}</h3>
-          <h1 id="totalPriceAmount">{totalPriceAmount}</h1>
+          <motion.h3
+            id="oldTotalPriceAmount"
+            key={oldTotalPriceAmount}
+            initial={{ y: "-100%", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: "-100%", opacity: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            {oldTotalPriceAmount}
+          </motion.h3>
+          <motion.h1
+            id="totalPriceAmount"
+            key={totalPriceAmount}
+            initial={{ y: "-100%", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: "-100%", opacity: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            {totalPriceAmount}
+          </motion.h1>
         </div>
       </section>
       <section id="processButtonWrapper">
