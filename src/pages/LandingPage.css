@@ -512,6 +512,10 @@ button {
     font-size: 32px;
   }
 
+  #productInfo h3 {
+    font-size: 26px;
+  }
+
   .btn {
     padding: 30px 60px;
     font-size: 24px;
@@ -569,6 +573,10 @@ button {
 
   #productInfo h1 {
     font-size: 24px;
+  }
+
+  #productInfo h3 {
+    font-size: 20px;
   }
 
   .btn {
@@ -631,6 +639,10 @@ button {
     font-size: 26px;
   }
 
+  #productInfo h3 {
+    font-size: 22px;
+  }
+
   .btn {
     padding: 20px 40px;
     font-size: 18px;
@@ -667,6 +679,10 @@ button {
   #productInfo h1 {
     white-space: nowrap;
     font-size: 20px;
+  }
+
+  #productInfo h3 {
+    font-size: 16px;
   }
 
   #productCard {
@@ -758,6 +774,10 @@ button {
 
   #productInfo h1 {
     font-size: 18px;
+  }
+
+  #productInfo h3 {
+    font-size: 16px;
   }
 }
 
@@ -868,5 +888,9 @@ button {
 @media (width <= 350px) {
   #productInfo > div {
     width: 15%;
+  }
+
+  #productInfo h3 {
+    font-size: 12px;
   }
 }

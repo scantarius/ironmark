@@ -98,7 +98,7 @@
 
 @media (width <= 2561px) {
   #loaderWrapper {
-    margin-top: -180px;
+    margin-top: -300px;
     transform: scale(0.9);
   }
 
@@ -114,6 +114,9 @@
 }
 
 @media (width <= 430px) {
+  #loaderWrapper {
+    margin-top: -400px;
+  }
   #loaderWrapper h1 {
     font-size: 16px;
   }
